@@ -1,4 +1,5 @@
 # OOPS Banner Printer (Java)
 
-All banner lines are stored inside an array, and a **for-each loop** is used to iterate through the array and print each line to the console.
+In this enhanced version, the **OOPS** banner is generated using separate **methods** for better structure and reusability.
+
 
