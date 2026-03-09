@@ -1,5 +1,5 @@
 # OOPS Banner Printer (Java)
 
-In this enhanced version, the **OOPS** banner is generated using separate **methods** for better structure and reusability.
+In this enhanced version, the **OOPS** banner evolves from simple console output to a sophisticated.
 
 
