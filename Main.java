@@ -1,61 +1,78 @@
 public class Main {
 
-    public static String[] getAPattern() {
-        return new String[] {
-            "   *** ",
-            " **  **",
-            "**   **",
-            "**   **",
-            "**   **",
-            "**  ** ",
-            "  ***  "
+    public static class CharacterPatternMap {
+
+        private char character;
+        private String[] pattern;
+
+        public CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+
+        public String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    public static String[] getOPattern() {
+        return new String[]{
+            " *** ",
+            "*   *",
+            "*   *",
+            "*   *",
+            "*   *",
+            "*   *",
+            " *** "
         };
     }
 
-    public static String[] getBPattern() {
-        return new String[] {
-            "   *** ",
-            " **  **",
-            "**   **",
-            "**   **",
-            "**   **",
-            "**  ** ",
-            "  ***  "
+    public static String[] getPPattern() {
+        return new String[]{
+            "**** ",
+            "*   *",
+            "*   *",
+            "**** ",
+            "*    ",
+            "*    ",
+            "*    "
         };
     }
 
-    public static String[] getCPattern() {
-        return new String[] {
-            "  ***** ",
-            "  **  **",
-            "  **  **",
-            "  ***** ",
-            "  **    ",
-            "  **    ",
-            "  **    "
-        };
-    }
-
-    public static String[] getDPattern() {
-        return new String[] {
-            "  ***** ",
-            " **     ",
-            " **     ",
-            "  ***** ",
-            "       **",
-            "  **   **",
-            "   ***** "
+    public static String[] getSPattern() {
+        return new String[]{
+            " ****",
+            "*    ",
+            "*    ",
+            " *** ",
+            "    *",
+            "    *",
+            "**** "
         };
     }
 
     public static void main(String[] args) {
-        String aPattern [] = getAPattern();
-        String cPattern[] = getCPattern();
-        String bPattern[] = getBPattern();
-        String dPattern[] = getDPattern();
 
-        for (int i = 0; i < aPattern.length; i++) {
-            System.out.println(aPattern[i] + " " + bPattern[i] + " " + cPattern[i] + " " + dPattern[i]);
+        CharacterPatternMap[] letters = {
+            new CharacterPatternMap('O', getOPattern()),
+            new CharacterPatternMap('O', getOPattern()),
+            new CharacterPatternMap('P', getPPattern()),
+            new CharacterPatternMap('S', getSPattern())
+        };
+
+        for (int row = 0; row < 7; row++) {
+
+            StringBuilder line = new StringBuilder();
+
+            for (CharacterPatternMap letter : letters) {
+                line.append(letter.getPattern()[row]).append("  ");
+            }
+
+            System.out.println(line);
         }
     }
 }
